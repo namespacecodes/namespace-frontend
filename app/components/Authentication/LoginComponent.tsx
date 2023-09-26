@@ -4,6 +4,7 @@ import Link from 'next/link'
 import React from 'react'
 import Divider from './Divider';
 import { CLIENT_ID } from '@/constants';
+import axios from 'axios';
 const LoginComponent = () => {
   return (
     <GoogleOAuthProvider clientId={CLIENT_ID}>
@@ -14,6 +15,13 @@ const LoginComponent = () => {
           <GoogleLogin
             onSuccess={credentialResponse => {
               console.log(credentialResponse);
+              axios.post("http://localhost:8000/googleLogin",credentialResponse).then((res)=>{
+                  console.log(res.data.status);
+                  alert(res.data.status)
+              }).catch((err)=>{
+                alert(err.data.status)
+                console.log(err);
+              })
             }}
             onError={() => {
               console.log('Login Failed');
