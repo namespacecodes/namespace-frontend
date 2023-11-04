@@ -7,6 +7,7 @@ export default function Home() {
     <div style={{width:"100vw",height:"100vh"}} className='flex flex-row justify-center items-center'>
     <ImageComponent/>
     <LoginComponent />
+    
     </div>
   )
 }
