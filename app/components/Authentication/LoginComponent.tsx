@@ -1,25 +1,32 @@
 'use client'
 import { GoogleLogin, GoogleOAuthProvider } from '@react-oauth/google';
 import Link from 'next/link'
-import React from 'react'
+import React, { Suspense, useState } from 'react'
 import Divider from './Divider';
 import { CLIENT_ID } from '@/constants';
 import axios from 'axios';
+import {Spin} from 'antd'
+import { useRouter } from 'next/navigation';
+import Loading from '../Loading';
 const LoginComponent = () => {
+  const [loading,setLoading] = useState(false)
+  const router = useRouter()
   return (
     <GoogleOAuthProvider clientId={CLIENT_ID}>
-
+      <Spin size='large' spinning={loading}/>
       <div className='flex flex-col justify-between items-center w-4/12 h-5/6'>
         <div className='flex flex-col items-center justify-between flex-1 pt-20 pb-10'>
           <div className='text-3xl color-black'>Sign in to NameSpace</div>
           <GoogleLogin
             onSuccess={credentialResponse => {
+              setLoading(true)
               console.log(credentialResponse);
               axios.post("http://localhost:8000/googleLogin",credentialResponse).then((res)=>{
-                  console.log(res.data.status);
-                  alert(res.data.status)
+                console.log(res.data.status);
+                setLoading(false)
+                router.push('/home')
               }).catch((err)=>{
-                alert(err.data.status)
+                setLoading(false)
                 console.log(err);
               })
             }}
@@ -27,11 +34,10 @@ const LoginComponent = () => {
               console.log('Login Failed');
             }}
             shape='pill'
-            // theme='filled_blue'
             context='signin'
             text='continue_with'
             width="20vw"
-          />
+            />
           <Divider/>
         </div>
         <div className='flex flex-col items-center justify-between flex-1 w-full h-1/2'>
@@ -43,6 +49,7 @@ const LoginComponent = () => {
         </div>
       </div>
     </GoogleOAuthProvider>
+      // </Spin>
   )
 }
 
