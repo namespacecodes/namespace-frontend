@@ -8,7 +8,7 @@ import { poppins_semibold } from '@/fonts/poppins'
 const About = () => {
   return (
     <div id="about">
-    <div className='p-10 flex-col md:flex-row flex flex-1 space-y-3 md:space-x-3'>
+    <div className='p-10 flex-col md:flex-row flex flex-1 space-y-3 md:space-x-3 mb-10'>
         <AboutCards title="1:1 Calls"/>
         <AboutCards title="Newsletter"/>
         <AboutCards title="Guides & Toolkit"/>
