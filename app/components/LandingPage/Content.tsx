@@ -15,7 +15,7 @@ const Content = () => {
                 <div className={poppins_home.className}>
                     <button onClick={()=>{
                    document.getElementById("about")?.scrollIntoView(true);
-                    }}  style={{ display: "flex", flex: 1, textAlign: "center",color:"#360181", backgroundColor: "#F2D89F" }} className='text-[18px] rounded-full p-2'>
+                    }}  style={{ display: "flex", flex: 1, textAlign: "center",color:"#360181", backgroundColor: "#F2D89F" }} className='text-[18px] rounded-[20000px] p-3'>
                         <div className='flex flex-1 flex-row align-middle justify-center space-x-2'>
                             <div>
                                 Discover More
