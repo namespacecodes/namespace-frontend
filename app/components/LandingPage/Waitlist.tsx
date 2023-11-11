@@ -39,14 +39,14 @@ const Waitlist = () => {
     return (
         <Form form={form} onFinish={onFinish} style={{ display: "flex", flex: 1, flexDirection: "column", justifyContent: "center", alignItems: "center" }} className='pt-5'>
             {contextHolder}
-            <Form.Item  name='name' className='w-5/6 md:w-1/6' labelCol={{span:1}} rules={[{ required: true, message: 'Please input your name!' }]}>
-                <Input  placeholder='Name' />
+            <Form.Item  name='name' className='w-5/6 md:w-1/6 border-[#340181]' labelCol={{span:1}} rules={[{ required: true, message: 'Please input your name!' }]}>
+                <Input className='border-[#340181]' size='large'   placeholder='Name' />
             </Form.Item>
-            <Form.Item name='email' className='w-5/6 md:w-1/6' labelCol={{span:1}} rules={[{ required: true, message: 'Please input your email!' }]}>
-                <Input  placeholder='Email' />
+            <Form.Item name='email' className='w-5/6 md:w-1/6 border-[#340181]' labelCol={{span:1}} rules={[{ required: true, message: 'Please input your email!' }]}>
+                <Input className='border-[#340181]' size='large'  placeholder='Email' />
             </Form.Item>
             <Form.Item className='w-5/6 md:w-1/6' labelCol={{span:1}}>
-                <Button loading={loading} className='bg-[#F6014E] w-full  text-[#FEFEFE]' htmlType='submit' type='default'>Join Waitlist</Button>
+                <Button loading={loading} size='large' className='bg-[#F6014E] w-full  text-[#FEFEFE]' htmlType='submit' type='default'>Join Waitlist</Button>
             </Form.Item>
         </Form>
     )

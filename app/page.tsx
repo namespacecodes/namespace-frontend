@@ -10,7 +10,7 @@ import Footer from './components/LandingPage/Footer'
 export default function Home() {
   return (
     <div>
-      <div className='h-1/6 md:h-screen w-screen py-10 bg-gradient-to-b from-[#360181] via-[#470E9C] to-[#000000]'>
+      <div className='h-1/6 md:h-screen w-screen py-10 bg-gradient-to-b from-[#360181] via-[#470E9C] to-[#2D0643]'>
         <Header />
         <Content />
       </div>
