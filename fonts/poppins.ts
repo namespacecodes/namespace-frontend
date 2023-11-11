@@ -37,5 +37,33 @@ export const poppins_semibold= Poppins({
     subsets: ['latin']
 })
 
+export const poppins_100 = Poppins({
+  weight:'100',
+  subsets: ['latin']
+})
+export const poppins_200 = Poppins({
+  weight:'200',
+  subsets: ['latin']
+})
+export const poppins_300 = Poppins({
+  weight:'300',
+  subsets: ['latin']
+})
+
+export const poppins_400 = Poppins({
+  weight:'400',
+  subsets: ['latin']
+})
+
+export const poppins_500 = Poppins({
+  weight:'500',
+  subsets: ['latin']
+})
+
+export const poppins_600 = Poppins({
+  weight:'600',
+  subsets: ['latin']
+})
+
 
 
