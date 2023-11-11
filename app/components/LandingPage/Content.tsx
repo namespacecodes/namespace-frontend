@@ -1,13 +1,17 @@
 "use client"
 import { poppins_600, poppins_content_1, poppins_home, poppins_italic } from '@/fonts/poppins'
 import React from 'react'
+import Image from 'next/image';
 import { RightCircleOutlined } from '@ant-design/icons';
 import SphereComp from './SphereComp';
+import Sphere1 from '../../../public/images/sphere_1.svg'
+import Sphere2 from '../../../public/images/sphere_2.svg'
+import { Carousel } from 'antd';
 
 const Content = () => {
     return (
-        <div className='flex flex-1 h-5/6 py-7 px-3 w-screen flex-col md:flex-row' >
-            <div className={`${poppins_content_1.className} space-y-24 md:space-y-28 w-fit pt-[10%] pl-[10%] text-[#FFFFFF] md:w-1/2`}>
+        <div className='flex flex-1 h-[90%] py-7 px-3 w-screen flex-col md:flex-row' >
+            <div className={`${poppins_content_1.className} space-y-24 md:space-y-28 w-fit h-fit pt-[10%] pl-[10%] text-[#FFFFFF] md:w-1/2`}>
                 <div className='text-6xl space-y-7 hidden md:inline'>
                     <div>Turn your name </div>
                     <div>
@@ -35,7 +39,11 @@ const Content = () => {
                 </div>
             </div>
             <div className='invisible md:w-1/2 md:visible'>
-                <SphereComp />
+                {/* <SphereComp /> */}
+                <Carousel autoplay dotPosition='left'>
+                    <Image src={Sphere1} alt="meetings" width="72" height="72" />
+                    <Image src={Sphere2} alt="meetings" width="72" height="72" />
+                </Carousel>
             </div>
         </div>
     )
