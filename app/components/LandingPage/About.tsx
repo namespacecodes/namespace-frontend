@@ -29,7 +29,7 @@ const About = () => {
                     </div>
                     <div className='flex flex-1 flex-row space-x-2 md:justify-center'>
                         <Image src={checkMark} alt="checkmark" />
-                        <div className="whitespace-pre-line">Host everything within your link.in.bio.</div>
+                        <div className="whitespace-pre-line">Host everything within your <span className='text-[#F6014E]'>link.in.bio.</span></div>
                     </div>
                 </div>
             </div>

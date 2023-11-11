@@ -5,7 +5,7 @@ import Waitlist from './Waitlist'
 
 const Invitation = () => {
   return (
-    <div className='p-10 flex flex-1 flex-col mt-20 mb-20' >
+    <div className='p-10 flex flex-1 flex-col mt-20 mb-20 space-y-3' >
         <div className={`${poppins_600.className} text-[40px] text-center text-[#340181] md:text-[48px]`}>
             namespace is launching soon!
         </div>

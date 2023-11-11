@@ -1,23 +1,27 @@
 "use client"
 import { poppins_600, poppins_content_1, poppins_home, poppins_italic } from '@/fonts/poppins'
 import React from 'react'
+import Image from 'next/image';
 import { RightCircleOutlined } from '@ant-design/icons';
-import SphereComp from './SphereComp';
+// import SphereComp from './SphereComp';
+import Sphere1 from '../../../public/images/sphere_1.svg'
+import Sphere2 from '../../../public/images/sphere_2.svg'
+import { Carousel } from 'antd';
 
 const Content = () => {
     return (
-        <div className='flex flex-1 h-5/6 py-7 px-3 w-screen flex-col md:flex-row' >
-            <div className={`${poppins_content_1.className} space-y-24 md:space-y-28 w-fit pt-[10%] pl-[10%] text-[#FFFFFF] md:w-1/2`}>
-                <div className='text-6xl space-y-7 hidden md:inline'>
+        <div className='flex flex-1 h-[90%] py-7 px-3 w-screen flex-col md:flex-row' >
+            <div className={`${poppins_content_1.className} space-y-24 md:space-y-[8vh] w-fit h-fit pt-[10%] pl-[10%] text-[#FFFFFF] md:w-1/2`}>
+                <div className='text-6xl space-y-[3vh] hidden md:inline'>
                     <div>Turn your name </div>
                     <div>
-                      into a   <span className='text-[#F6014E]'>{" "}brand</span>.
+                        into a   <span className='text-[#F6014E]'>{" "}brand</span>.
                     </div>
                 </div>
-                <div  className='text-6xl visible md:hidden '>
+                <div className='text-6xl visible md:hidden '>
                     <div>Turn your name into a <span className='text-[#F6014E]'>{" "}brand</span>. </div>
                 </div>
-                
+
                 <div className={`${poppins_home.className} break-normal text-[24px]`}>
                     <div><span className={poppins_italic.className}>Quickest</span> way to monetize your audience, All tools to build your personal brand in one space.</div>
                 </div>
@@ -34,8 +38,12 @@ const Content = () => {
                     </button>
                 </div>
             </div>
-            <div className='invisible md:w-1/2 md:visible'>
-                <SphereComp />
+            <div className='hidden md:w-1/2 md:inline'>
+                {/* <SphereComp /> */}
+                <Carousel autoplay dotPosition='left' className='h-[90vh'>
+                    <Image src={Sphere1} fill={false} className='h-[80vh]' alt="meetings" />
+                    <Image src={Sphere2} fill={false} className='h-[80vh]' alt="meetings" />
+                </Carousel>
             </div>
         </div>
     )
