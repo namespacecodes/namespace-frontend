@@ -1,11 +1,11 @@
 
 import { Suspense } from 'react'
 import Loading from './components/Loading'
-import Header from './components/LandingPage/Header'
-import Content from './components/LandingPage/Content'
-import About from './components/LandingPage/About'
-import Invitation from './components/LandingPage/Invitation'
-import Footer from './components/LandingPage/Footer'
+import Header from './components/Home/Header'
+import Content from './components/Home/Content'
+import About from './components/Home/About'
+import Invitation from './components/Home/Invitation'
+import Footer from './components/Home/Footer'
 
 export default function Home() {
   return (
