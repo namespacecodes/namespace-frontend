@@ -19,8 +19,8 @@ const About = () => {
                 </div>
                 <div className='w-fit flex-row pt-8 space-y-7 text-center text-[#340181] md:w-1/2 md:justify-center'>
                     <div className={`${poppins_500.className} text-[26px] md:text-[30px]`}>Your Name, Your Space.</div>
-                    <div className='flex-1 flex-row space-y-3 space-x-2 hidden md:flex md:justify-center'>
-                        <Image src={checkMark} alt="checkmark" />
+                    <div className='flex-1 flex-row space-y-3 space-x-2 hidden md:flex md:justify-center items-start'>
+                        <Image className='mt-[2vh]' src={checkMark} alt="checkmark" />
                         <div className={`${poppins_200.className}whitespace-pre-line`}><div>One space for your personalized services,</div> portfolio, booking, newsletter, and<div> community.</div></div>
                     </div>
                     <div className='flex flex-1 flex-row space-y-3 space-x-2 md:hidden md:justify-center'>

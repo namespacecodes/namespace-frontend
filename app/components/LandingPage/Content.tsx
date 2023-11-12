@@ -23,7 +23,7 @@ const Content = () => {
                 </div>
 
                 <div className={`${poppins_home.className} break-normal text-[24px]`}>
-                    <div><span className={poppins_italic.className}>Quickest</span> way to monetize your audience, All tools to build your personal brand in one space.</div>
+                    <div><span className={poppins_italic.className}>Quickest</span> way to monetize your audience,<div> All tools to build your personal brand in one space.</div></div>
                 </div>
                 <div className={poppins_600.className}>
                     <button onClick={() => {
@@ -38,11 +38,11 @@ const Content = () => {
                     </button>
                 </div>
             </div>
-            <div className='hidden md:w-1/2 md:inline'>
+            <div className='hidden md:w-1/2 md:inline mt-[5vh]'>
                 {/* <SphereComp /> */}
-                <Carousel autoplay dotPosition='left' className='h-[90vh'>
-                    <Image src={Sphere1} fill={false} className='h-[80vh]' alt="meetings" />
-                    <Image src={Sphere2} fill={false} className='h-[80vh]' alt="meetings" />
+                <Carousel speed={2000} autoplay dotPosition='left' className='h-[90vh'>
+                    <Image src={Sphere1} fill={false} className='h-[70vh]' alt="meetings" />
+                    <Image src={Sphere2} fill={false} className='h-[70vh]' alt="meetings" />
                 </Carousel>
             </div>
         </div>
