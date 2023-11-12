@@ -40,7 +40,7 @@ const Content = () => {
             </div>
             <div className='hidden md:w-1/2 md:inline mt-[5vh]'>
                 {/* <SphereComp /> */}
-                <Carousel speed={2000} autoplay dotPosition='left' className='h-[90vh'>
+                <Carousel speed={2000} autoplaySpeed={5000} autoplay dotPosition='left' className='h-[90vh'>
                     <Image src={Sphere1} fill={false} className='h-[70vh]' alt="meetings" />
                     <Image src={Sphere2} fill={false} className='h-[70vh]' alt="meetings" />
                 </Carousel>
