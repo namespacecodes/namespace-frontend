@@ -3,7 +3,7 @@ import { GoogleLogin, GoogleOAuthProvider } from '@react-oauth/google';
 import Link from 'next/link'
 import React, { Suspense, useState } from 'react'
 import Divider from './Divider';
-import { BASEURLLOCAL, CLIENT_ID } from '@/constants';
+import {  CLIENT_ID,BASEURL } from '@/constants';
 import axios from 'axios';
 import {Spin} from 'antd'
 import { useRouter } from 'next/navigation';
@@ -20,7 +20,7 @@ const LoginComponent = () => {
             onSuccess={credentialResponse => {
               setLoading(true)
               console.log(credentialResponse);
-              axios.post(`${BASEURLLOCAL}/googleLogin`,credentialResponse).then((res)=>{
+              axios.post(`${BASEURL}/googleLogin`,credentialResponse).then((res)=>{
                 console.log(res.data.status);
                 localStorage.setItem('token',res.data.accessToken)
                 localStorage.setItem('userId',res.data.userId)
