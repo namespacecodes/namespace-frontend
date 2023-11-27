@@ -9,7 +9,7 @@ const SkillsDrawer= ({ toggleDrawer, drawerOpen }: any) => {
     return (
         <Drawer push={{ distance: 0 }} open={drawerOpen} onClose={toggleDrawer} className='w-[100vw]' headerStyle={{ display: "none" }}>
             <div className='flex flex-1 flex-row justify-between items-center'>
-                <div className={`${poppins_600.className} text-[24px]`}>
+                <div className={`${poppins_600.className} text-[32px]`}>
                     <div>Talk</div>
                     <div>about your</div>
                     <div>skills,</div>

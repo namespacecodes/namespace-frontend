@@ -1,19 +1,20 @@
 import { poppins_600 } from '@/fonts/poppins'
-import { Button, Drawer, Input } from 'antd'
+import { Button, Checkbox, Drawer, Input } from 'antd'
 import React from 'react'
 import { CloseOutlined } from '@ant-design/icons'
-
 const BioDrawer = ({ toggleDrawer, drawerOpen }: any) => {
+   
     const { TextArea } = Input;
     return (
         <Drawer push={{ distance: 0 }} open={drawerOpen} onClose={toggleDrawer} className='w-[100vw]' headerStyle={{ display: "none" }}>
             <div className='flex flex-1 flex-row justify-between items-center'>
-                <div className={`${poppins_600.className} text-[24px]`}>
-                    <div>Social </div>
-                    <div>Accounts,</div>
+                <div className={`${poppins_600.className} text-[32px]`}>
+                    <div>Share </div>
+                    <div>your story,</div>
                 </div>
                 <CloseOutlined onClick={toggleDrawer} style={{ fontSize: 20 }} />
             </div>
+           
             <div className='p-3 mt-[5vh] flex flex-1 flex-col justify-center items-center space-y-[4vh]'>
                 <TextArea placeholder="short brief on your profession , skills , talent." style={{ height: "15vh", textAlign: "center",borderRadius:"5px" }} />
                 <TextArea placeholder="tell us more!" style={{ height: "40vh", textAlign: "center", alignItems: "center",borderRadius:"5px" }} />
