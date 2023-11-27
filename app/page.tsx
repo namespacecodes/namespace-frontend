@@ -1,6 +1,3 @@
-
-import { Suspense } from 'react'
-import Loading from './components/Loading'
 import Header from './components/Home/Header'
 import Content from './components/Home/Content'
 import About from './components/Home/About'
