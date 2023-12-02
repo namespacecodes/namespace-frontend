@@ -7,9 +7,12 @@ import {  CLIENT_ID,BASEURL } from '@/constants';
 import axios from 'axios';
 import {Spin} from 'antd'
 import { useRouter } from 'next/navigation';
+import Cookies from 'universal-cookie';
 const LoginComponent = () => {
   const [loading,setLoading] = useState(false)
+
   const router = useRouter()
+  const cookie = new Cookies()
   return (
     <GoogleOAuthProvider clientId={CLIENT_ID}>
       <Spin size='large' spinning={loading}/>
@@ -22,8 +25,7 @@ const LoginComponent = () => {
               console.log(credentialResponse);
               axios.post(`${BASEURL}/googleLogin`,credentialResponse).then((res)=>{
                 console.log(res.data.status);
-                localStorage.setItem('token',res.data.accessToken)
-                localStorage.setItem('userId',res.data.userId)
+                cookie.set('token',res.data.accessToken,{path:'/'})
                 setLoading(false)
                 router.push('/profile')
               }).catch((err)=>{
