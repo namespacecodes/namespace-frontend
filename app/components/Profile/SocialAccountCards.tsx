@@ -25,7 +25,7 @@ const SocialAccountCards = ({ name, socialId, link }: any) => {
   let src = FB
   if (name === "Instagram") src = Insta
   if (name === "X") src = X
-  if (name === "linkedIn") src = LinkedIn
+  if (name === "LinkedIn") src = LinkedIn
   if (name === "YouTube") src = YT
   const [bottomdrawerOpen, setbottomDrawerOpen] = useState(false)
   const [socialLink, setSocialLink] = useState(link)
