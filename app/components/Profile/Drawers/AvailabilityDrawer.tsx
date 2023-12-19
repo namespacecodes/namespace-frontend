@@ -60,7 +60,7 @@ const AvailabilityDrawer = ({ toggleDrawer, drawerOpen }: any) => {
         </div>
       </div>
       <div className='flex flex-1 justify-center items-center mt-[16vh]'>
-      <Button className='bg-[#340181] h-[15vh] text-[#FEFEFE] w-[30vw] rounded-[10px]' size='large'>save</Button>
+      <Button className='bg-[#340181] h-[15vh] text-[#FEFEFE] w-[30vw] md:w-[20vw] rounded-[10px]' size='large'>save</Button>
       </div>
       </Spin>
     </Drawer>

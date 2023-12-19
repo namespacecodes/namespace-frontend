@@ -21,7 +21,7 @@ const CreateLink = () => {
         </div>
         <Image alt='more' src={More} onClick={toggleDrawer} />
     </div>
-    <Drawer open={drawerOpen} placement='bottom' className='rounded-[20px] ' headerStyle={{ display: "none" }} onClose={toggleDrawer}>
+    <Drawer open={drawerOpen} placement={ window.innerWidth>768?"right":'bottom'} className='rounded-[20px] md:rounded-none' width={window.innerWidth>768?"30%":"50%"} headerStyle={{ display: "none" }} onClose={toggleDrawer}>
         <div className='flex flex-1 flex-row justify-between items-center'>
           <div className={`${poppins_600.className} text-[32px]`}>
             <div>Your </div>
@@ -31,7 +31,7 @@ const CreateLink = () => {
         </div>
         <div className='mt-[10vh] flex flex-1 flex-col space-y-[4vh] justify-between items-center'>
           <Input size='large' className='h-[5vh]' value={input} onChange={(e)=>{setInput(e.target.value)}} placeholder={'www.mynamespace/'} />
-          <Button className='bg-[#340181] h-[15vh] text-[#FEFEFE] w-[50vw]'  size='large'>save</Button>
+          <Button className='bg-[#340181] h-[15vh] md:w-[20vw] text-[#FEFEFE] w-[50vw]'  size='large'>save</Button>
         </div>
       </Drawer>
     </div>

@@ -31,11 +31,11 @@ const Name = () => {
   const data:any=userInfo?.data?.data
   if(userInfo.isPending) return <div>Loading...</div>
   return (
-    <div className={`${poppins_500.className} text-[24px] text-center mt-[2vh] absolute top-[5vh] left-[23vw] md:left-[40vw] z-10`}>
+    <div className={`${poppins_500.className} text-[24px] text-center mt-[2vh] absolute top-[5vh] left-[23vw] md:left-[43vw] z-10`}>
       <Image src={ProfilePic} className='rounded-full' alt='Profile Picture' onClick={togglePicDrawer} />
       <PictureDrawer toggleDrawer={togglePicDrawer} drawerOpen={picDrawer}/>
       <div onClick={toggleDrawer}>{data?.name?data.name:"Hello"}</div>
-      <Drawer open={drawerOpen} placement='bottom' className='rounded-[20px]' width={"50%"} headerStyle={{ display: "none" }} onClose={toggleDrawer}>
+      <Drawer open={drawerOpen} placement={ window.innerWidth>768?"right":'bottom'} className='rounded-[20px] md:rounded-none' width={window.innerWidth>768?"30%":"50%"} headerStyle={{ display: "none" }} onClose={toggleDrawer}>
         <div className='flex flex-1 flex-row justify-between items-center'>
           <div className={`${poppins_600.className} text-[32px]`}>
             <div>Your </div>
@@ -45,7 +45,7 @@ const Name = () => {
         </div>
         <div className='mt-[10vh] flex flex-1 flex-col space-y-[4vh] justify-between items-center'>
           <Input size='large' className='h-[5vh]' value={input} onChange={(e)=>{setInput(e.target.value)}} placeholder={data?.name?data.name:'name'} />
-          <Button className='bg-[#340181] h-[15vh] text-[#FEFEFE] w-[50vw]' onClick={()=>{updateUserMutation.mutate({name:input})}} size='large'>save</Button>
+          <Button className='bg-[#340181] h-[15vh] text-[#FEFEFE] w-[50vw] md:w-[20vw]' onClick={()=>{updateUserMutation.mutate({name:input})}} size='large'>save</Button>
         </div>
       </Drawer>
     </div>
