@@ -8,6 +8,8 @@ import axios from "axios"
  export const decodedJwt:any=jwtDecode(cookies.get("token"))
 
 export const getUserDetails= async({querykey}:any)=>{
+    console.log(decodedJwt.userid);
+    
     const body={
         user_id:decodedJwt.userid
     }

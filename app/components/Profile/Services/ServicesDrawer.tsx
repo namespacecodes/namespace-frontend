@@ -13,8 +13,8 @@ import { updateServices } from '@/mutations/profile'
 
 const ServicesDrawer = ({ toggleDrawer, drawerOpen }: any) => {
   const {data,isPending,isError,}= useQuery({queryKey:["userServices"],queryFn:getUserServices})
-  const [price,setPrice]=useState(data?.data[0].price)
-  const [duration,setDuration]=useState(data?.data[0].duration)
+  const [price,setPrice]=useState(data?.data[0]?.price)
+  const [duration,setDuration]=useState(data?.data[0]?.duration)
   const queryClient= useQueryClient()
     const updateServiceMutation=useMutation({
        mutationFn:({description,more_info}:any)=>{
