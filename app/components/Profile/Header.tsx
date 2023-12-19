@@ -1,5 +1,6 @@
 import { poppins_700 } from '@/fonts/poppins'
 import React from 'react'
+import './header.scss'
 
 const Header = () => {
   return (

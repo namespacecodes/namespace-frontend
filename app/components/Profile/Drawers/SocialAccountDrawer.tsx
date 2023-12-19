@@ -38,7 +38,7 @@ const SocialAccountDrawer = ({ toggleDrawer, drawerOpen }: any) => {
                 <CloseOutlined onClick={toggleDrawer} style={{ fontSize: 20 }} />
             </div>
             <div className='p-3 mt-[5vh]'>
-                <Row className='flex flex-1 justify-between h-[60vh]' style={{alignContent:'space-between'}}>
+                <Row className='flex flex-1 justify-between h-[60vh] md:space-y-[2vh]' style={{alignContent:'space-between'}}>
                     <SocialAccountCards name='Instagram'  socialId={instaLink?.socialId} link={instaLink?.link} />
                     <SocialAccountCards name='Facebook'  socialId={fbLink?.socialId} link={fbLink?.link} />
                     <SocialAccountCards name='X'  socialId={xLink?.socialId} link={xLink?.link} />

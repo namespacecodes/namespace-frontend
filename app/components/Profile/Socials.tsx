@@ -22,7 +22,7 @@ const Socials = () => {
         setdrawerOpen(!drawerOpen)
     }
     return (
-        <div className={`${poppins_600.className} p-5 text-[20px] text-[#000000] m-5 rounded-[25px] w-[80vw] bg-white shadow-lg shadow-slate-400`}>
+        <div className={`${poppins_600.className} p-5 text-[20px] text-[#000000] m-5 rounded-[25px] w-[80vw] md:w-[50vw] bg-white shadow-lg shadow-slate-400`}>
             <div>
                 <div>Your </div>
                 <div>socials,</div>

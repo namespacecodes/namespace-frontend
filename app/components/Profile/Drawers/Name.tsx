@@ -31,11 +31,11 @@ const Name = () => {
   const data:any=userInfo?.data?.data
   if(userInfo.isPending) return <div>Loading...</div>
   return (
-    <div className={`${poppins_500.className} text-[24px] text-center mt-[2vh]`}>
+    <div className={`${poppins_500.className} text-[24px] text-center mt-[2vh] absolute top-[5vh] left-[23vw] md:left-[40vw] z-10`}>
       <Image src={ProfilePic} className='rounded-full' alt='Profile Picture' onClick={togglePicDrawer} />
       <PictureDrawer toggleDrawer={togglePicDrawer} drawerOpen={picDrawer}/>
       <div onClick={toggleDrawer}>{data?.name?data.name:"Hello"}</div>
-      <Drawer open={drawerOpen} placement='bottom' className='rounded-[20px] ' headerStyle={{ display: "none" }} onClose={toggleDrawer}>
+      <Drawer open={drawerOpen} placement='bottom' className='rounded-[20px]' width={"50%"} headerStyle={{ display: "none" }} onClose={toggleDrawer}>
         <div className='flex flex-1 flex-row justify-between items-center'>
           <div className={`${poppins_600.className} text-[32px]`}>
             <div>Your </div>

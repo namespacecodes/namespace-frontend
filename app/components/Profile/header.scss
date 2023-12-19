@@ -1,0 +1,42 @@
+// body {
+//     background-color: #F7F0D0;
+//     height: 100vh;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//   }
+  
+  .inverted-border-radius-1 {
+    position: relative;
+    border-radius: 0px 0px 0px 0;
+  }
+  
+  .inverted-border-radius-1::before {
+    content: "";
+    position: absolute;
+    background-color: transparent;
+    top: 13vh;
+    left: 0;
+    height: 50px;
+    width: 25px;
+    border-top-left-radius: 25px;
+    box-shadow: 0 -25px 0  #340181;
+    right: 0;
+  }
+  .inverted-border-radius-2 {
+    position: relative;
+    border-radius: 0px 0px 0px 0;
+  }
+  
+  .inverted-border-radius-2::before {
+    content: "";
+    position: absolute;
+    background-color: transparent;
+    top: 13vh;
+   left: 50vw;
+    height: 50px;
+    width: 25px;
+    border-top-left-radius: 25px;
+    box-shadow: 0 -25px 0  #340181;
+    right: 0;
+  }

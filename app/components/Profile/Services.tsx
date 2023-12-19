@@ -17,11 +17,11 @@ const Services = () => {
     return <div>Loading...</div>
   }
   return (
-    <div className={`${poppins_600.className} p-5 text-[20px] text-[#000000] m-5 rounded-[25px] w-[80vw] bg-white shadow-lg shadow-slate-400`}>
+    <div className={`${poppins_600.className} md:w-[50vw] p-5 text-[20px] text-[#000000] m-5 rounded-[25px] w-[80vw] bg-white shadow-lg shadow-slate-400`}>
     <div>
         <div>Services</div>
     </div>
-    <div className='flex flex-1 justify-center space-x-[16vh]'>
+    <div className='flex flex-1 justify-between'>
         <div className={`${poppins_300.className} text-[17px]`}>
          {data?.map((item:any)=>item.service_name).join(", ")||"Add Services"}
         </div>

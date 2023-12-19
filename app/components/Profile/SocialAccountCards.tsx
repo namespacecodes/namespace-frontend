@@ -33,7 +33,7 @@ const SocialAccountCards = ({ name, socialId, link }: any) => {
     setbottomDrawerOpen(!bottomdrawerOpen);
   }
   return (
-    <div className={` ${poppins_400.className} h-[17vh] space-y-4 bg-white shadow-lg w-[35vw] p-5 rounded-[15px] shadow-slate-400`}>
+    <div className={` ${poppins_400.className} h-[17vh] space-y-[2vh] bg-white shadow-lg w-[35vw] p-5 rounded-[15px] shadow-slate-400`}>
       <div className='flex flex-1 flex-row justify-between items-start'>
         <div>
           <Image alt='fb' src={src} />

@@ -30,7 +30,7 @@ const BioDrawer = ({ toggleDrawer, drawerOpen,bio,more }: any) => {
             <div className='p-3 mt-[5vh] flex flex-1 flex-col justify-center items-center space-y-[4vh]'>
                 <TextArea placeholder={bio?bio:"short brief on your profession , skills , talent."} value={bioInput} onChange={(input)=>{setBioInput(input.target.value)}} style={{ height: "15vh", textAlign: "center",borderRadius:"5px" }} />
                 <TextArea placeholder={more?more:"tell us more!"} value={bioMoreInput} onChange={(input)=>{setBioMoreInput(input.target.value)}} style={{ height: "40vh", textAlign: "center", alignItems: "center",borderRadius:"5px" }} />
-                <Button className='bg-[#340181] h-[15vh] text-[#FEFEFE] w-[50vw]' size='large' onClick={()=>{updateUserMutation.mutate({bio:bioInput,more_info:bioMoreInput})}}>save</Button>
+                <Button className='bg-[#340181] h-[15vh] text-[#FEFEFE] w-[50vw] md:w-[20vw]' size='large' onClick={()=>{updateUserMutation.mutate({bio:bioInput,more_info:bioMoreInput})}}>save</Button>
             </div>
         </Drawer>
     )

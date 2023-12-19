@@ -33,7 +33,7 @@ const SkillsDrawer= ({ toggleDrawer, drawerOpen,description,moreInfo,service_id 
             <div className='p-3 mt-[5vh] flex flex-1 flex-col justify-center items-center space-y-[4vh]'>
                 <TextArea placeholder={description?description:"short brief on what your users can expect on call."} value={desc} onChange={(input)=>{setDesc(input.target.value)}} style={{ height: "15vh", textAlign: "center",borderRadius:"5px" }} />
                 <TextArea placeholder={moreInfo?moreInfo:"tell us more!"} value={more} onChange={(input)=>{setMore(input.target.value)}} style={{ height: "40vh", textAlign: "center", alignItems: "center",borderRadius:"5px" }} />
-                <Button className='bg-[#340181] h-[15vh] text-[#FEFEFE] w-[50vw]' size='large' onClick={()=>{updateServiceMutation.mutate({description:desc,more_info:more})}}>save</Button>
+                <Button className='bg-[#340181] h-[15vh] text-[#FEFEFE] w-[50vw] md:w-[20vw]' size='large' onClick={()=>{updateServiceMutation.mutate({description:desc,more_info:more})}}>save</Button>
             </div>
         </Drawer>
     )

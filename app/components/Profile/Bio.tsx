@@ -18,7 +18,7 @@ const Bio = () => {
     return <div>Loading...</div>
   }
   return (
-    <div className={`${poppins_600.className} p-5 text-[20px] text-[#000000] m-5 rounded-[25px] w-[80vw] bg-white shadow-lg shadow-slate-400`}>
+    <div className={`${poppins_600.className} p-5 text-[20px] md:w-[50vw] text-[#000000] m-5 rounded-[25px] w-[80vw] bg-white shadow-lg shadow-slate-400`}>
     <div>
         <div>Bio</div>
     </div>
