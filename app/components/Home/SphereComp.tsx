@@ -16,7 +16,7 @@ const SphereComp = () => {
           enableRotate
         />
         <Spher/>
-        <Picture/>
+        {/* <Picture/> */}
       </Flex>
     </Canvas>
   )
@@ -25,12 +25,15 @@ const SphereComp = () => {
 
 
 const Spher = () => {
-  const meshRef = useRef<THREE.Mesh>(null!)
-  useFrame((state, delta) => (meshRef.current.rotation.y += delta))
+  const groupRef = useRef<THREE.Group>(null!)
+  useFrame((state, delta) => (groupRef.current.rotation.y += delta*0.5))
   return (
-    <Sphere ref={meshRef} args={[2.5, 20, 20]} >
+    <group ref={groupRef}>
+    <Sphere  args={[2.5, 20, 20]} >
           <meshBasicMaterial wireframe color={"rgb(215,139,82)"} />
-        </Sphere>
+    </Sphere>
+    <Picture/>
+    </group>
   )
 }
 

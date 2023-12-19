@@ -1,9 +1,21 @@
+"use client"
 import { poppins_600 } from '@/fonts/poppins'
 import { Button, Checkbox, Drawer, Input } from 'antd'
-import React from 'react'
+import React, { useState } from 'react'
 import { CloseOutlined } from '@ant-design/icons'
-const BioDrawer = ({ toggleDrawer, drawerOpen }: any) => {
-   
+import { useMutation, useQueryClient } from '@tanstack/react-query'
+import { updateUser } from '@/mutations/profile'
+const BioDrawer = ({ toggleDrawer, drawerOpen,bio,more }: any) => {
+    const queryClient= useQueryClient()
+  const updateUserMutation= useMutation({
+    mutationFn:({bio,more_info}:any)=>{
+      return updateUser({bio,more_info})},
+    onSuccess:()=>{
+      queryClient.invalidateQueries({queryKey:['userInfo']})
+    }
+  })
+    const [bioInput,setBioInput]= useState(bio?bio:"")
+    const [bioMoreInput,setBioMoreInput]= useState(more?more:"")
     const { TextArea } = Input;
     return (
         <Drawer push={{ distance: 0 }} open={drawerOpen} onClose={toggleDrawer} className='w-[100vw]' headerStyle={{ display: "none" }}>
@@ -16,9 +28,9 @@ const BioDrawer = ({ toggleDrawer, drawerOpen }: any) => {
             </div>
            
             <div className='p-3 mt-[5vh] flex flex-1 flex-col justify-center items-center space-y-[4vh]'>
-                <TextArea placeholder="short brief on your profession , skills , talent." style={{ height: "15vh", textAlign: "center",borderRadius:"5px" }} />
-                <TextArea placeholder="tell us more!" style={{ height: "40vh", textAlign: "center", alignItems: "center",borderRadius:"5px" }} />
-                <Button className='bg-[#340181] h-[15vh] text-[#FEFEFE] w-[50vw]' size='large'>save</Button>
+                <TextArea placeholder={bio?bio:"short brief on your profession , skills , talent."} value={bioInput} onChange={(input)=>{setBioInput(input.target.value)}} style={{ height: "15vh", textAlign: "center",borderRadius:"5px" }} />
+                <TextArea placeholder={more?more:"tell us more!"} value={bioMoreInput} onChange={(input)=>{setBioMoreInput(input.target.value)}} style={{ height: "40vh", textAlign: "center", alignItems: "center",borderRadius:"5px" }} />
+                <Button className='bg-[#340181] h-[15vh] text-[#FEFEFE] w-[50vw] md:w-[20vw]' size='large' onClick={()=>{updateUserMutation.mutate({bio:bioInput,more_info:bioMoreInput})}}>save</Button>
             </div>
         </Drawer>
     )

@@ -1,9 +1,12 @@
 "use client"
 import { poppins_300, poppins_600 } from '@/fonts/poppins';
-import { Button, Drawer, Select, TimePicker } from 'antd';
+import { Button, Drawer,  Spin, TimePicker } from 'antd';
 import React, { useState } from 'react'
 import { CloseOutlined } from '@ant-design/icons'
+import { useQuery } from '@tanstack/react-query';
+import { getAvailability } from '@/queries/profile';
 const AvailabilityDrawer = ({ toggleDrawer, drawerOpen }: any) => {
+    const {data,isPending,isError,error}=useQuery({queryKey:["getAvailability"],queryFn:getAvailability})
     const [selectedDays, setSelectedDays] = useState<any>([]);
     const handleDayClick = (day:any) => {
       // Check if the day is already selected
@@ -15,8 +18,13 @@ const AvailabilityDrawer = ({ toggleDrawer, drawerOpen }: any) => {
         setSelectedDays([...selectedDays, day]);
       }
     };
+    if(isError){
+      return <div>{error.message}</div>
+    }
+
   return (
     <Drawer push={{ distance: 0 }} open={drawerOpen} onClose={toggleDrawer} className='w-[100vw]' headerStyle={{ display: "none" }}>
+      <Spin spinning={isPending}>
          <div className='flex flex-1 flex-row justify-between items-center'>
                 <div className={`${poppins_600.className} text-[32px]`}>
                     <div>Your</div>
@@ -52,8 +60,9 @@ const AvailabilityDrawer = ({ toggleDrawer, drawerOpen }: any) => {
         </div>
       </div>
       <div className='flex flex-1 justify-center items-center mt-[16vh]'>
-      <Button className='bg-[#340181] h-[15vh] text-[#FEFEFE] w-[30vw] rounded-[10px]' size='large'>save</Button>
+      <Button className='bg-[#340181] h-[15vh] text-[#FEFEFE] w-[30vw] md:w-[20vw] rounded-[10px]' size='large'>save</Button>
       </div>
+      </Spin>
     </Drawer>
   )
 }
