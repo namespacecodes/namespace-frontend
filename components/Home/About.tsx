@@ -1,8 +1,8 @@
 import React from 'react'
 import AboutCards from './AboutCards'
 import Image from 'next/image'
-import AboutImage from '../../../public/about.svg'
-import checkMark from '../../../public/checkmark.svg'
+import AboutImage from '../../public/about.svg'
+import checkMark from '../../public/checkmark.svg'
 import { poppins_200, poppins_500, poppins_semibold } from '@/fonts/poppins'
 
 const About = () => {

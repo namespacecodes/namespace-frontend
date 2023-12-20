@@ -1,12 +1,9 @@
-import React from 'react'
-import Header from '../components/Profile/Header'
-import Socials from '../components/Profile/Socials'
-import Bio from '../components/Profile/Bio'
-import Services from '../components/Profile/Services'
-import Name from '../components/Profile/Drawers/Name'
-import { useQuery } from '@tanstack/react-query'
-import { getUserDetails, getUserServices, getUserSocialMedia } from '../../queries/profile'
-import CreateLink from '../components/Profile/CreateLink'
+import Header from '../../components/Profile/Header'
+import Socials from '../../components/Profile/Socials'
+import Bio from '../../components/Profile/Bio'
+import Services from '../../components/Profile/Services'
+import Name from '../../components/Profile/Drawers/Name'
+import CreateLink from '../../components/Profile/CreateLink'
 
 const Page = () => {
   // const socialmediaInfo= useQuery({queryKey:["userSocialMedia"],queryFn:getUserSocialMedia})

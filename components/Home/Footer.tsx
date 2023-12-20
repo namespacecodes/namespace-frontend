@@ -1,10 +1,10 @@
 import { poppins_home, poppins_namespace, poppins_namespace_copyrights, poppins_namespace_footer } from '@/fonts/poppins'
 import Link from 'next/link'
 import React from 'react'
-import facebook from '../../../public/socialmedia/facebook.svg'
-import twitter from '../../../public/socialmedia/x.svg'
-import instagram from '../../../public/socialmedia/instagram.svg'
-import linkedin from '../../../public/socialmedia/linkedin.svg'
+import facebook from '../../public/socialmedia/facebook.svg'
+import twitter from '../../public/socialmedia/x.svg'
+import instagram from '../../public/socialmedia/instagram.svg'
+import linkedin from '../../public/socialmedia/linkedin.svg'
 import Image from 'next/image'
 
 const Footer = () => {

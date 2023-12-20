@@ -4,8 +4,8 @@ import React from 'react'
 import Image from 'next/image';
 import { RightCircleOutlined } from '@ant-design/icons';
 // import SphereComp from './SphereComp';
-import Sphere1 from '../../../public/images/sphere_1.svg'
-import Sphere2 from '../../../public/images/sphere_2.svg'
+import Sphere1 from '../../public/images/sphere_1.svg'
+import Sphere2 from '../../public/images/sphere_2.svg'
 import { Carousel } from 'antd';
 
 const Content = () => {

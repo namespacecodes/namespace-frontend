@@ -1,8 +1,8 @@
-import Header from './components/Home/Header'
-import Content from './components/Home/Content'
-import About from './components/Home/About'
-import Invitation from './components/Home/Invitation'
-import Footer from './components/Home/Footer'
+import Header from '../components/Home/Header'
+import Content from '../components/Home/Content'
+import About from '../components/Home/About'
+import Invitation from '../components/Home/Invitation'
+import Footer from '../components/Home/Footer'
 
 export default function Home() {
   return (

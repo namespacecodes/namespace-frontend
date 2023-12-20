@@ -2,7 +2,7 @@
 import { poppins_600 } from '@/fonts/poppins'
 import React, { useState } from 'react'
 import Image from 'next/image'
-import More from '../../../../public/images/more.svg'
+import More from '../../../public/images/more.svg'
 import AvailabilityDrawer from '../Drawers/AvailabilityDrawer'
 
 const Availability = () => {

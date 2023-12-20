@@ -2,7 +2,7 @@
 import { poppins_500, poppins_600 } from '@/fonts/poppins'
 import Image from 'next/image'
 import React, { useState } from 'react'
-import ProfilePic from '../../../../public/images/profilepic.jpeg'
+import ProfilePic from '../../../public/images/profilepic.jpeg'
 import { Button, Drawer, Input } from 'antd'
 import { CloseOutlined } from '@ant-design/icons'
 import PictureDrawer from './PictureDrawer'
@@ -11,6 +11,7 @@ import { updateUser } from '@/mutations/profile'
 import { getUserDetails } from '@/queries/profile'
 const Name = () => {
   const queryClient= useQueryClient()
+  const isBrowser = () => typeof window !== "undefined"
   const updateUserMutation= useMutation({
     mutationFn:({name}:any)=>{
       return updateUser({name})},
@@ -35,7 +36,7 @@ const Name = () => {
       <Image src={ProfilePic} className='rounded-full' alt='Profile Picture' onClick={togglePicDrawer} />
       <PictureDrawer toggleDrawer={togglePicDrawer} drawerOpen={picDrawer}/>
       <div onClick={toggleDrawer}>{data?.name?data.name:"Hello"}</div>
-      <Drawer open={drawerOpen} placement={ window.innerWidth>768?"right":'bottom'} className='rounded-[20px] md:rounded-none' width={window.innerWidth>768?"30%":"50%"} headerStyle={{ display: "none" }} onClose={toggleDrawer}>
+      <Drawer open={drawerOpen} placement={isBrowser()? window.innerWidth>768?"right":'bottom':"right"} className='rounded-[20px] md:rounded-none' width={isBrowser()? window.innerWidth>768?"30%":"50%":"30%"} headerStyle={{ display: "none" }} onClose={toggleDrawer}>
         <div className='flex flex-1 flex-row justify-between items-center'>
           <div className={`${poppins_600.className} text-[32px]`}>
             <div>Your </div>

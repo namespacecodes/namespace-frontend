@@ -25,6 +25,7 @@ const LoginComponent = () => {
               axios.post(`${BASEURL}/googleLogin`,credentialResponse).then((res)=>{
                 console.log(res.data.status);
                 cookie.set('token',res.data.accessToken,{path:'/'})
+                cookie.set('user_id',res.data.user_id,{path:'/'})
                 setLoading(false)
                 router.push('/profile')
               }).catch((err)=>{

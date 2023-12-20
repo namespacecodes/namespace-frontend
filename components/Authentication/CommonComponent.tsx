@@ -1,7 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
-import loginImage from '../../../public/images/loginimg.jpg'
-import logo from '../../../public/images/logo.png'
+import loginImage from '../../public/images/loginimg.jpg'
+import logo from '../../public/images/logo.png'
 const ImageComponent = () => {
   return (
     <div className='flex flex-col justify-center items-center w-4/12 h-5/6 bg-[#fefbf7]'>

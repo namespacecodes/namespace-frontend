@@ -1,10 +1,10 @@
 import { BASEURL, HEADERS } from "@/constants"
-import { decodedJwt } from "@/queries/profile";
+import { user_id } from "@/queries/profile";
 import axios from "axios"
 
 export const updateUser= ({name,bio,more_info}:any)=>{
     const body:any={}
-    body["user_id"]=decodedJwt.userid
+    body["user_id"]=user_id
     if (name) body["name"]=name
     if (bio) body["bio"]=bio
     if (more_info) body["more_info"]=more_info 
@@ -25,7 +25,7 @@ export const updateServices=({description,more_info,price,duration,service_name,
 // export const updateAvailability=({})
 export const updateSocialMediaProfile= ({profile_id,profile_link,user_id,social_media_name}:any)=>{
     const body:any={}
-    body["user_id"]=decodedJwt.userid
+    body["user_id"]=user_id
     if (profile_id) body["profile_id"]=profile_id
     if (profile_link) body["profile_link"]=profile_link
     if (social_media_name) body["social_media_name"]=social_media_name

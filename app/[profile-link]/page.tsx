@@ -1,7 +1,7 @@
 "use client"
 import React from 'react'
-import Name from '../components/Profile/Drawers/Name';
-import Header from '../components/Profile/Header';
+import Name from '../../components/Profile/Drawers/Name';
+import Header from '../../components/Profile/Header';
 import SocialsView from './SocialsView';
 
 const Page = ({ params }: { params: { "profile-link": string } })  => {

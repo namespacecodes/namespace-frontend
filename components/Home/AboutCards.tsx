@@ -1,9 +1,9 @@
 import Image from "next/image"
-import Calls from '../../../public/1:1calls.svg'
-import NewsLetter from '../../../public/newsletter.svg'
-import Docs from '../../../public/docs.svg'
+import Calls from '../../public/1:1calls.svg'
+import NewsLetter from '../../public/newsletter.svg'
+import Docs from '../../public/docs.svg'
 import { callContent,newsLetterContent,guidesContent } from "@/constants"
-import { poppins_semibold,poppins_home, poppins_400, poppins_500, poppins_300 } from "@/fonts/poppins"
+import { poppins_home,poppins_500, poppins_300 } from "@/fonts/poppins"
 const AboutCards = ({title}:any) => {
     let img=Docs
     let content=guidesContent

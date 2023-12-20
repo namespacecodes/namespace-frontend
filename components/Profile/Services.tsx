@@ -1,7 +1,7 @@
 "use client"
 import { poppins_300, poppins_600 } from '@/fonts/poppins'
 import React, { useState } from 'react'
-import More from '../../../public/images/more.svg'
+import More from '../../public/images/more.svg'
 import Image from 'next/image'
 import ServicesDrawer from './Services/ServicesDrawer'
 import { useQuery } from '@tanstack/react-query'
