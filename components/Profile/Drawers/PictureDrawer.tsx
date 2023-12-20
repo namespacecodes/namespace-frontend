@@ -3,7 +3,7 @@ import { Button, Drawer, Upload } from 'antd'
 import React from 'react'
 import { CloseOutlined, PlusOutlined } from '@ant-design/icons'
 import Image from 'next/image'
-import imageUrl from '../../../../public/images/profilepic.jpeg'
+import imageUrl from '../../../public/images/profilepic.jpeg'
 const PictureDrawer = ({ toggleDrawer, drawerOpen }: any) => {
     const uploadButton = (
         <div>

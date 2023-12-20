@@ -1,7 +1,7 @@
 "use client"
 import { poppins_600 } from '@/fonts/poppins'
 import React, { useState } from 'react'
-import More from '../../../public/images/more.svg'
+import More from '../../public/images/more.svg'
 import Image from 'next/image'
 import { CloseOutlined } from '@ant-design/icons'
 import { Button, Drawer, Input } from 'antd'
@@ -9,6 +9,7 @@ import { Button, Drawer, Input } from 'antd'
 const CreateLink = () => {
   const [drawerOpen, setdrawerOpen] = useState(false)
   const [input,setInput]=useState("")
+  const isBrowser = () => typeof window !== "undefined"
   const toggleDrawer = () => {
     setdrawerOpen(!drawerOpen)
   }
@@ -21,7 +22,7 @@ const CreateLink = () => {
         </div>
         <Image alt='more' src={More} onClick={toggleDrawer} />
     </div>
-    <Drawer open={drawerOpen} placement={ window.innerWidth>768?"right":'bottom'} className='rounded-[20px] md:rounded-none' width={window.innerWidth>768?"30%":"50%"} headerStyle={{ display: "none" }} onClose={toggleDrawer}>
+    <Drawer open={drawerOpen} placement={isBrowser()? window.innerWidth>768?"right":'bottom':"right"} className='rounded-[20px] md:rounded-none' width={isBrowser()?window.innerWidth>768?"30%":"50%":"30%"} headerStyle={{ display: "none" }} onClose={toggleDrawer}>
         <div className='flex flex-1 flex-row justify-between items-center'>
           <div className={`${poppins_600.className} text-[32px]`}>
             <div>Your </div>

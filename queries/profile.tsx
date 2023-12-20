@@ -1,6 +1,6 @@
 import { BASEURL, HEADERS } from "@/constants"
 import Cookies from 'universal-cookie';
-import { jwtDecode } from "jwt-decode";
+
 
 const cookies = new Cookies();
 import axios from "axios"

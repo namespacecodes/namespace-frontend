@@ -2,7 +2,7 @@
 import { poppins_300, poppins_600 } from '@/fonts/poppins'
 import React, { useState } from 'react'
 import Image from 'next/image'
-import More from '../../../../public/images/more.svg'
+import More from '../../../public/images/more.svg'
 import SkillsDrawer from './SkillsDrawer'
 import { useQuery } from '@tanstack/react-query'
 import { getUserServices } from '@/queries/profile'
