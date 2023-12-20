@@ -34,6 +34,7 @@ export default function Home() {
             console.log(credentialResponse);
             axios.post(`${BASEURL}/googleLogin`, credentialResponse).then((res) => {
               console.log(res.data.status);
+              cookie.set('user_id',res.data.user_id,{path:'/'})
               cookie.set('token', res.data.accessToken, { path: '/' })
               setLoading(false)
               router.push('/profile')

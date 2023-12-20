@@ -1,7 +1,9 @@
 import { BASEURL, HEADERS } from "@/constants"
-import { user_id } from "@/queries/profile";
-import axios from "axios"
 
+import axios from "axios"
+import Cookies from "universal-cookie"
+const cookies= new Cookies()
+const user_id= cookies.get('user_id')
 export const updateUser= ({name,bio,more_info}:any)=>{
     const body:any={}
     body["user_id"]=user_id
