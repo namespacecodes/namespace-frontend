@@ -8,6 +8,7 @@ export const BASEURL= "https://name-space.onrender.com"
 // export const BASEURLLOCAL="http://localhost:8000"
 // https://name-space.onrender.com
 const cookies= new Cookies()
+export const user_id= cookies.get('user_id')
 export const HEADERS={
     headers:{
         Authorization:`Bearer ${cookies.get("token")}`
