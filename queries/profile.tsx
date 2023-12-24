@@ -34,3 +34,8 @@ export const getAvailability= async()=>{
     }
     return await axios.post(`${BASEURL}/getAvailability`,body,HEADERS).then((res)=>res.data)
 }
+
+export const getProfile = async({queryKey}:any)=>{
+    const [_key, {profileName}] = queryKey
+    return await axios.get(`${BASEURL}/profile/${profileName}`,HEADERS).then((res)=>res.data)
+}

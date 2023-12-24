@@ -8,9 +8,6 @@ import CreateLink from '../../components/Profile/CreateLink'
 import Cookies from 'universal-cookie'
 
 const Page = () => {
-  const cookies = new Cookies();
-  console.log(cookies.get("user_id"));
-  
   return (
     <div className='flex flex-1 flex-col items-center'>
         <Header/>

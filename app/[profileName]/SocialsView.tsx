@@ -15,32 +15,34 @@ import YouTube from '../../public/socialmedia/ytcolor.svg'
 
 
 import Image from 'next/image'
-const SocialsView = () => {
-    const data=[
-        {
-            social_media_name:"Facebook",
-            profile_link:"",
-            profile_id:1
-        },
-        {
-            social_media_name:"Instagram",
-            profile_link:"",
-            profile_id:2
-        },
-        {
-            social_media_name:"X",
-            profile_link:"",
-            profile_id:3
-        },
-        {
-            social_media_name:"LinkedIn",
-            profile_link:"",
-            profile_id:4
-        }
-    ]
+const SocialsView = ({data}:any) => {
+    // const data=[
+    //     {
+    //         social_media_name:"Facebook",
+    //         profile_link:"",
+    //         profile_id:1
+    //     },
+    //     {
+    //         social_media_name:"Instagram",
+    //         profile_link:"",
+    //         profile_id:2
+    //     },
+    //     {
+    //         social_media_name:"X",
+    //         profile_link:"",
+    //         profile_id:3
+    //     },
+    //     {
+    //         social_media_name:"LinkedIn",
+    //         profile_link:"",
+    //         profile_id:4
+    //     }
+    // ]
+    let space= "justify-center"
+    if(data?.length>2) space="justify-between"
   return (
-    <div className='pt-[3vh] flex flex-1 flex-row justify-between w-[70vw]'>
-    {data.map((item:any,index:any)=>{
+    <div className={` ${space} pt-[3vh] flex flex-1 flex-row w-[60vw] md:w-[50vw]`}>
+    {data?.map((item:any,index:any)=>{
          let src = Facebook
          if (item.social_media_name === "Instagram") src = Instagram
          if (item.social_media_name === "X") src = X
@@ -48,7 +50,6 @@ const SocialsView = () => {
          if (item.social_media_name === "YouTube") src = YouTube
          return(
              <a key={item.profile_id}  href={item.profile_link} target="_blank">
-
                  <Image alt={item.social_media_name} src={src} />
              </a>
              )
